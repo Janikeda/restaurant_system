@@ -23,7 +23,7 @@
         <slf4j.version>1.7.25</slf4j.version>
 
         <!--DB-->
-        <postgresql.version>42.2.5</postgresql.version>
+        <hsqldb.version>2.4.1</hsqldb.version>
         <!--    Tests  -->
         <junit.version>4.12</junit.version>
 
@@ -73,8 +73,8 @@
                         </systemProperties>
                         <dependencies>
                             <dependency>
-                                <groupId>org.postgresql</groupId>
-                                <artifactId>postgresql</artifactId>
+                                <groupId>org.hsqldb</groupId>
+                                <artifactId>hsqldb</artifactId>
                             </dependency>
                         </dependencies>
                     </container>
@@ -216,4 +216,16 @@
             <scope>test</scope>
         </dependency>
     </dependencies>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-framework-bom</artifactId>
+                <version>${spring.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
 </project>
